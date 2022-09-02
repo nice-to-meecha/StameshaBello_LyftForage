@@ -8,5 +8,6 @@ class CapuletEngine(EngineInterface):
         self.last_service_mileage = last_service_mileage
         self.current_mileage = current_mileage
 
-    def needs_servicing(self) -> bool:
+    def needs_service(self) -> bool:
         return self.current_mileage - self.last_service_mileage >= self.MILEAGE_SERVICING_THRESHOLD
+        

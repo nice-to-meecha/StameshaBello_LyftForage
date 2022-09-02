@@ -1,7 +1,8 @@
 import abc
 
-class EngineInterface(abc.ABC):
+class BatteryInterface(abc.ABC):
 
     @abc.abstractmethod
     def needs_service() -> bool:
         pass
+    
