@@ -11,6 +11,8 @@ class SpindlerBattery(BatteryInterface):
         self.current_date = current_date
 
     def needs_service(self) -> bool:
-        days_since_service = (self.current_date - self.last_service_date).days
-        years_since_service = days_since_service // self.DAYS_IN_A_YEAR  # Does not account for leap years
-        return years_since_service >= self.YEAR_SERVICING_THRESHOLD
+        # Based on model implementation
+        next_service_date = self.last_service_date.replace(
+            year = self.last_service_date.year + self.YEAR_SERVICING_THRESHOLD
+        )
+        return self.current_date >= next_service_date
