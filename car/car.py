@@ -1,6 +1,6 @@
 from serviceable import Serviceable
-from ..battery.battery_interface import BatteryInterface
-from ..engine.engine_interface import EngineInterface
+from battery.battery_interface import BatteryInterface
+from engine.engine_interface import EngineInterface
 
 class Car(Serviceable):
 
@@ -10,4 +10,3 @@ class Car(Serviceable):
 
     def needs_service(self) -> bool:
         return self.engine.needs_service() or self.battery.needs_service()
-        
